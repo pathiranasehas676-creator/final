@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Readify | Book Explorer</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/explorer.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a class="logo" href="index.html">Readify</a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primaryNav" class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="explorer.html">Book Explorer</a>
+        <a href="tracker.html">Progress Tracker</a>
+        <a href="recommender.html">Random Recommender</a>
+        <a href="flow.html">Reading Flow</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="reveal">
+      <h1>Book Explorer</h1>
+      <p>Search by title, author, or genre. Click a book for full details.</p>
+    </section>
+
+    <section class="explorer-controls reveal">
+      <div>
+        <label for="searchInput">Search</label>
+        <input id="searchInput" type="text" placeholder="Try 'fantasy' or 'Mira'">
+      </div>
+      <div>
+        <label for="genreFilter">Genre</label>
+        <select id="genreFilter">
+          <option>All</option>
+          <option>Fantasy</option>
+          <option>Adventure</option>
+          <option>Contemporary</option>
+          <option>Science Fiction</option>
+          <option>Mystery</option>
+        </select>
+      </div>
+      <div>
+        <label for="authorFilter">Author Filter</label>
+        <input id="authorFilter" type="text" placeholder="Author name">
+      </div>
+    </section>
+
+    <section id="bookGrid" class="book-grid"></section>
+  </main>
+
+  <div id="bookModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <p id="modalSynopsis"></p>
+      <ul id="modalSeries"></ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Reviewer</th>
+            <th>Rating</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody id="modalTable"></tbody>
+      </table>
+      <div class="modal-actions">
+        <button id="addToList" class="btn btn-primary">Add to Reading List</button>
+        <button id="modalClose" class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <small>© 2026 Readify</small>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Accessibility</a>
+        <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/utils.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/explorer.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>

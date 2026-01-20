@@ -1,0 +1,40 @@
+/* Feedback page styles only */
+.feedback-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.accordion-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition);
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 200px;
+  margin-top: 8px;
+}
+
+.error-text {
+  color: #b91c1c;
+  font-size: 0.85rem;
+}
+
+@media (min-width: 900px) {
+  .feedback-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

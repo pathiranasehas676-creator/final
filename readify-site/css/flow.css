@@ -1,0 +1,16 @@
+/* Reading Flow page styles only */
+.sound-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sound-controls .btn.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.completed-list {
+  display: grid;
+  gap: 12px;
+}

@@ -1,0 +1,40 @@
+/* Explorer page styles only */
+.explorer-controls {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.book-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.book-card img {
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 700px) {
+  .explorer-controls {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,32 @@
+/* Recommender page styles only */
+.recommender-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.recommendation-card {
+  border: 2px dashed var(--primary);
+}
+
+.pick-again {
+  animation: wiggle 0.6s ease;
+}
+
+.list-preview {
+  display: grid;
+  gap: 12px;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  50% { transform: rotate(-1deg); }
+  75% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@media (min-width: 900px) {
+  .recommender-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

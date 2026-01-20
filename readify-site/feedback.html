@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Readify | Feedback</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/feedback.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a class="logo" href="index.html">Readify</a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primaryNav" class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="explorer.html">Book Explorer</a>
+        <a href="tracker.html">Progress Tracker</a>
+        <a href="recommender.html">Random Recommender</a>
+        <a href="flow.html">Reading Flow</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="reveal">
+      <h1>Feedback</h1>
+      <p>Share your thoughts to improve Readify.</p>
+    </section>
+
+    <section class="feedback-grid reveal">
+      <form id="feedbackForm" class="card">
+        <label>Name
+          <input name="name" type="text" required>
+          <small id="nameError" class="error-text"></small>
+        </label>
+        <label>Email
+          <input name="email" type="email" required>
+          <small id="emailError" class="error-text"></small>
+        </label>
+        <label>Message
+          <textarea name="message" rows="4" required></textarea>
+          <small id="messageError" class="error-text"></small>
+        </label>
+        <button class="btn btn-primary" type="submit">Send Feedback</button>
+        <p id="feedbackMsg"></p>
+      </form>
+
+      <div class="card">
+        <h2>FAQ</h2>
+        <div class="accordion-item">
+          <div class="accordion-title">How do I save my reading list?</div>
+          <div class="accordion-content"><p>Use the “Save to Reading List” buttons in Explorer or Recommender.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title">Can I access Readify offline?</div>
+          <div class="accordion-content"><p>Yes, the PWA caches pages after your first visit.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title">How often does Author of the Day change?</div>
+          <div class="accordion-content"><p>It updates daily using the system date.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title">Can I reset my progress data?</div>
+          <div class="accordion-content"><p>Clear your browser localStorage to reset saved data.</p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title">Is Readify beginner-friendly?</div>
+          <div class="accordion-content"><p>Yes! The code is simple and commented for viva discussions.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <small>© 2026 Readify</small>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Accessibility</a>
+        <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/utils.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/feedback.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>

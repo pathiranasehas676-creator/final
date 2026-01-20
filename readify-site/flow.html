@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Readify | Reading Flow</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/flow.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a class="logo" href="index.html">Readify</a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primaryNav" class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="explorer.html">Book Explorer</a>
+        <a href="tracker.html">Progress Tracker</a>
+        <a href="recommender.html">Random Recommender</a>
+        <a href="flow.html">Reading Flow</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="reveal">
+      <h1>Reading Flow</h1>
+      <p>Play cozy sounds and track completed reads.</p>
+    </section>
+
+    <section class="card reveal">
+      <h2>Cozy Sounds</h2>
+      <!-- Placeholder audio files: add sounds/rain.mp3, sounds/cafe.mp3, sounds/forest.mp3 manually -->
+      <div class="sound-controls">
+        <button class="btn btn-secondary" data-sound="sounds/rain.mp3">Rain</button>
+        <button class="btn btn-secondary" data-sound="sounds/cafe.mp3">Cafe</button>
+        <button class="btn btn-secondary" data-sound="sounds/forest.mp3">Forest</button>
+        <button class="btn btn-secondary" id="pauseSound">Pause</button>
+        <button class="btn btn-secondary" id="stopSound">Stop</button>
+      </div>
+      <p>Now playing: <span id="nowPlaying">Not playing</span></p>
+    </section>
+
+    <section class="card reveal">
+      <h2>Completed Books</h2>
+      <form id="completedForm">
+        <input name="completedTitle" type="text" placeholder="Book title">
+        <button class="btn btn-primary" type="submit">Mark Completed</button>
+      </form>
+      <div id="completedList" class="completed-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <small>© 2026 Readify</small>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Accessibility</a>
+        <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/utils.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/flow.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
