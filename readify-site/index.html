@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Readify | Home</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a class="logo" href="index.html">Readify</a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primaryNav" class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="explorer.html">Book Explorer</a>
+        <a href="tracker.html">Progress Tracker</a>
+        <a href="recommender.html">Random Recommender</a>
+        <a href="flow.html">Reading Flow</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero reveal">
+      <div>
+        <h1>Welcome to Readify</h1>
+        <p>Readify is your cozy campus reading companion. Explore books, track progress, and build relaxing reading rituals.</p>
+        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="explorer.html">Explore Books</a>
+          <a class="btn btn-secondary" href="tracker.html">Track Progress</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Placeholder image: add images/hero.jpg manually -->
+        <img src="images/hero.jpg" alt="Student reading with warm light">
+      </div>
+    </section>
+
+    <section class="container quote-slider reveal">
+      <div>
+        <h2>Quote Carousel</h2>
+        <p id="quoteText" class="quote-text"></p>
+        <p id="quoteAuthor"></p>
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div>
+        <!-- Placeholder image: add images/quote-side.jpg manually -->
+        <img src="images/quote-side.jpg" alt="Books and coffee">
+      </div>
+    </section>
+
+    <section class="container reveal">
+      <div class="card author-card">
+        <h2>Author of the Day</h2>
+        <p>Today we celebrate:</p>
+        <h3 id="authorOfDay"></h3>
+      </div>
+    </section>
+
+    <section class="container newsletter reveal">
+      <div>
+        <h2>Campus Newsletter</h2>
+        <p>Get gentle reading reminders and monthly book picks.</p>
+        <form id="newsletterForm">
+          <input type="email" placeholder="you@campus.edu" required>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+        <p id="newsletterMsg"></p>
+      </div>
+      <div class="card">
+        <h3>Why Subscribe?</h3>
+        <ul>
+          <li>✓ Fresh book recs</li>
+          <li>✓ Cozy study tips</li>
+          <li>✓ New events on campus</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container reveal">
+      <h2>Quick Navigation</h2>
+      <div class="quick-cards">
+        <a class="card" href="recommender.html">
+          <h3>Random Recommender</h3>
+          <p>Get a surprise book based on mood.</p>
+        </a>
+        <a class="card" href="flow.html">
+          <h3>Reading Flow</h3>
+          <p>Play cozy sounds while you read.</p>
+        </a>
+        <a class="card" href="feedback.html">
+          <h3>Feedback</h3>
+          <p>Tell us how Readify can improve.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <small>© 2026 Readify</small>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Accessibility</a>
+        <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/utils.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/home.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>

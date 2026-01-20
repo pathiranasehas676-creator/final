@@ -1,0 +1,76 @@
+/* Home page styles only */
+.hero {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero-image {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.quote-slider {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  background: var(--secondary);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.quote-text {
+  font-size: 1.2rem;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c7d2e1;
+}
+
+.dot.active {
+  background: var(--primary);
+}
+
+.quick-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.newsletter {
+  display: grid;
+  gap: 16px;
+}
+
+.author-card {
+  display: grid;
+  gap: 8px;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quote-slider {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .quick-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .newsletter {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+  }
+}
